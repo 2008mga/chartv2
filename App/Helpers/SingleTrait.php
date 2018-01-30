@@ -6,7 +6,6 @@ trait SingleTrait {
 	public static function boot(...$data) 
 	{
 		if (!self::$instance) {
-			// init 
 			self::$instance = new self($data);
 		}
 

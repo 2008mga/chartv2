@@ -1,23 +1,17 @@
 $(document).ready(function(){
 	$.ajax({
-		url : "http://192.168.1.35/chartjs/followersdata.php",
+		url : "http://chart.local/data.php",
 		type : "GET",
 		success : function(data){
-			console.log(data);
-
 			data = data['message'];
-
 			var userid = [];
 			var temper = [];
 			var humming = [];
-			//var googleplus_follower = [];
-
 			for(var i in data) {
-				userid.push(data[i].date1);  //userid.push("UserID " + data[i].id);
+				userid.push(data[i].date1);
 
 				temper.push(data[i].temp);
 				humming.push(data[i].hum);
-				//googleplus_follower.push(data[i].googleplus);
 			}
 
 			var chartdata = {
@@ -41,17 +35,8 @@ $(document).ready(function(){
 						borderColor: "rgba(29, 202, 255, 1)",
 						pointHoverBackgroundColor: "rgba(29, 202, 255, 1)",
 						pointHoverBorderColor: "rgba(29, 202, 255, 1)",
-						data: humming					}//,
-					//{
-					//	label: "googleplus",
-					//	fill: false,
-					//	lineTension: 0.1,
-					//	backgroundColor: "rgba(211, 72, 54, 0.75)",
-					//	borderColor: "rgba(211, 72, 54, 1)",
-					//	pointHoverBackgroundColor: "rgba(211, 72, 54, 1)",
-					//	pointHoverBorderColor: "rgba(211, 72, 54, 1)",
-					//	data: googleplus_follower
-					//}
+						data: humming					
+					}
 				]
 			};
 
