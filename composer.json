@@ -1,0 +1,17 @@
+{
+    "name": "root/graphs.old",
+    "description": "Chart app",
+    "authors": [
+        {
+            "name": "anton",
+            "email": "goranton@octopod.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+		"psr-4": {
+			"App\\": "App/",
+            "App\\Database\\": "Migrations/"
+		}
+	}
+}
